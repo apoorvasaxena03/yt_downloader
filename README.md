@@ -30,25 +30,25 @@ A robust and flexible YouTube downloader using `yt-dlp`, supporting:
 git clone https://github.com/<your-username>/yt-downloader.git
 cd yt-downloader
 pip install -e .
-
+```bash
 ---
 
 ## 🧪 Usage
 
 - ▶️ CLI Examples
-    ```bash
-    ### Download a single video
-    yt-downloader --url "https://youtu.be/xyz123" --output "C:/Videos"
-    
-    ### Download first 5 videos from a playlist
-    yt-downloader --url "https://youtube.com/playlist?list=PL123..." --output "C:/Videos" --limit 5
-    
-    ### Resume previously interrupted playlist
-    yt-downloader --resume --output "C:/Videos" --playlist "https://youtube.com/playlist?list=PL123..."
+```bash
+# Download a single video
+yt-downloader --url "https://youtu.be/xyz123" --output "C:/Videos"
 
+# Download first 5 videos from a playlist
+yt-downloader --url "https://youtube.com/playlist?list=PL123..." --output "C:/Videos" --limit 5
+
+# Resume previously interrupted playlist
+yt-downloader --resume --output "C:/Videos" --playlist "https://youtube.com/playlist?list=PL123..."
+```bash
 
 - 🖥️ GUI (Optional)
-    ```bash
-    python -m ytdl_core.gui
-
+```bash
+python -m ytdl_core.gui
+```bash
 A Tkinter-based GUI will open for video/playlist downloading.
