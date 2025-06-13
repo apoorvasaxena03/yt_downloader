@@ -48,13 +48,13 @@ yt-downloader --resume --output "C:/Videos" --playlist "https://youtube.com/play
 ```
 
 - 🖥️ GUI (Optional)
-  A Tkinter-based GUI will open for video/playlist downloading.
+A Tkinter-based GUI will open for video/playlist downloading.
 ```bash
 python -m ytdl_core.gui
 ```
 
 - 🐍 Python Module
-  You can use this tool programmatically as a module:
+You can use this tool programmatically as a module:
 ```python
 from ytdl_core.core import download_video, download_playlist, resume_download
 
