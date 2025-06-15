@@ -12,8 +12,6 @@ import zipfile
 import platform
 
 
-
-
 def clean_video_url(url: str) -> str:
     parsed = urlparse(url)
     query = parse_qs(parsed.query)
@@ -30,6 +28,20 @@ def clean_playlist_url(url: str) -> str:
     if 'list' in query:
         return f"https://www.youtube.com/playlist?list={query['list'][0]}"
     return url
+
+
+def is_playlist(url: str) -> bool:
+    """
+    Return True only if the URL is a real YouTube playlist URL.
+    Avoid misclassifying video URLs that include a 'list' param.
+    """
+    parsed = urlparse(url)
+    query = parse_qs(parsed.query)
+    # Case 1: Explicit playlist URL
+    if "playlist" in parsed.path:
+        return "list" in query
+    # Case 2: Non-playlist links like /watch or youtu.be
+    return parsed.path == "/playlist"
 
 
 def ensure_ffmpeg() -> Optional[str]:

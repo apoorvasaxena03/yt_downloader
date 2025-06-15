@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog, simpledialog, messagebox
-from .core import is_playlist, download_video, download_playlist
+from .core import is_playlist, download_video, download_playlist, clean_video_url, clean_playlist_url
 
 def launch_gui():
     root = tk.Tk()
@@ -17,9 +17,10 @@ def launch_gui():
 
     limit = None
     if is_playlist(url):
+        # Clean only if it's a true playlist
+        cleaned_url = clean_playlist_url(url)
         limit = simpledialog.askinteger("Playlist", "How many videos to download now?")
-
-    if is_playlist(url):
-        download_playlist(url, path, limit)
+        download_playlist(cleaned_url, path, limit)
     else:
-        download_video(url, path)
+        cleaned_url = clean_video_url(url)
+        download_video(cleaned_url, path)
