@@ -38,13 +38,13 @@ pip install -e .
 - ▶️ CLI Examples
 ```bash
 # Download a single video
-yt-downloader --url "https://youtu.be/xyz123" --output "C:/Videos"
+python -m ytdl_core.main --url "https://youtu.be/xyz123" --path "C:/Videos"
 
 # Download first 5 videos from a playlist
-yt-downloader --url "https://youtube.com/playlist?list=PL123..." --output "C:/Videos" --limit 5
+python -m ytdl_core.main --url "https://youtube.com/playlist?list=PL123..." --path "C:/Videos" --limit 5
 
 # Resume previously interrupted playlist
-yt-downloader --resume --output "C:/Videos" --playlist "https://youtube.com/playlist?list=PL123..."
+python -m ytdl_core.main --resume --path "C:/Videos" --playlist "https://youtube.com/playlist?list=PL123..."
 ```
 
 - 🖥️ GUI (Optional)
